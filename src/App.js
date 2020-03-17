@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Route,Switch} from 'react-router-dom';
-import Homepage from './pages/homepage.component';
+import Homepage from './pages/homepage/homepage.component';
+import Shop from './pages/ShopPage/shop.component';
 class App extends Component{
   constructor(props){
     super(props);
@@ -12,7 +13,6 @@ class App extends Component{
 
   render(){
     const Hats =(props)=>{
-      console.log(props)
       return (
         <div>
           <h1>Hats</h1>
@@ -22,7 +22,7 @@ class App extends Component{
     return (<div>
     <Switch>
      <Route exact path='/' component={Homepage} />
-     <Route path='/hats' component={Hats} />
+     <Route path='/shop' component={Shop} />
     </Switch>
     
       
