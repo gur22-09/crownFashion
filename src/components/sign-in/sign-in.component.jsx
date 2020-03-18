@@ -26,7 +26,8 @@ class SignIn extends React.Component{
            console.log(this.state)
        });
     }
-
+    /*attribute without anyspecified value like isGoogleSignIn will return true*/
+       
     render(){
         return(
             <div className='sign-in'>
@@ -36,10 +37,12 @@ class SignIn extends React.Component{
                 <form >
                  <FormInput handleChange={this.handleChange} name='email' type='email' value={this.state.email}  label='email' required />
                  <FormInput handleChange={this.handleChange} name='password' type='password' value={this.state.password}  label='password' required/>
+                 <div className='sign-in-container'>
                  <CustomButton onClick={this.handleSubmit} type='submit' value='submit form'>
                   Sign In
                  </CustomButton>
-                 <CustomButton onClick={signInWithGoogle}>Sign In using Google</CustomButton>
+                 <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign In using Google</CustomButton>
+                 </div>
                 </form>
             </div>
         )
