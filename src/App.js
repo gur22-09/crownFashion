@@ -5,7 +5,7 @@ import Homepage from './pages/homepage/homepage.component';
 import Shop from './pages/ShopPage/shop.component';
 import Header from './components/Header/header.component';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
-import{auth} from './firebase/firebase.utils';
+import{auth,createUserProfileDocument} from './firebase/firebase.utils';
 class App extends Component{
   constructor(props){
     super(props);
@@ -17,9 +17,30 @@ class App extends Component{
   unsubscribeAuth = null;
 
   componentDidMount(){
-   this.unsubscribeAuth = auth.onAuthStateChanged(user=>{
-      this.setState({currentUser:user});
-      console.log(user);
+   this.unsubscribeAuth = auth.onAuthStateChanged(async userAuth=>{ //this can be null or the obj.
+
+    if(userAuth){
+        
+      const userRef = await createUserProfileDocument(userAuth);//geeting userRef obj.
+
+       userRef.onSnapshot(snapshot=>{
+        this.setState({currentUser:{
+          id:snapshot.id,
+          ...snapshot.data()
+        }},()=>{
+          console.log(this.state);
+        });
+      });
+      
+    }else{
+      this.setState({
+        currentUser:userAuth
+      })
+    }
+    
+      
+      
+      
     })
   }
 

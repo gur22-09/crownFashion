@@ -21,6 +21,38 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 
+//fuctin for storing Auth.uid into our firestore
+export const createUserProfileDocument = async (userAuth,additonalData)=>{
+  
+    if(!userAuth) return; //if we get null then we dont want anything
+    
+    const userRef = firestore.doc(`users/${userAuth.uid}`);//our user doc object for reference
+    
+    const snapShot = await userRef.get();//snapShop is just crud methods on document ref object
+    
+    //setting up the user details if user is not already created using the snapShot
+    if(!snapShot.exists){
+        const {displayName,email} = userAuth;
+        const createdAt = new Date();
+     try{
+          await userRef.set({
+            displayName,
+            email,
+            createdAt,
+            ...additonalData
+        });
+
+     }catch(error){
+         console.log(`there was some error`,error.message);
+     }
+        
+    } 
+    
+    return userRef;
+    
+}
+
+
 const provider = new firebase.auth.GoogleAuthProvider(); //creating an instance of googleprovider object
 
 provider.setCustomParameters({'promt':'select_account'});//using google auth provider
