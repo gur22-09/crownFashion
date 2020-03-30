@@ -8,8 +8,11 @@ import {auth} from '../../firebase/firebase.utils';
 
 import { connect } from 'react-redux';
 
+import CartIcon from '../cart-icon/cart-icon.component';
 
-const Header=({currentUser})=>(
+import CardDropDown from '../card-dropdown/card-dropdow.component';
+
+const Header=({currentUser,hidden})=>(
     <div className='header'>
         <Link to='/' className='logo-container'>
             <Logo className='logo' />
@@ -27,15 +30,20 @@ const Header=({currentUser})=>(
              :
              <Link to='/signin'>SIGN IN</Link>
          }
+         <CartIcon />
          </div>
+         {
+          hidden ?null:<CardDropDown/>
+         }
     </div>
 )
 
 
 //state is our root-reducer object the master
 
-const mapStateToProps = state =>({
-  currentUser:state.user.currentUser //state=root-reducer,user=user-reducer
+const mapStateToProps = ({user:{currentUser},cart:{hidden}}) =>({
+  currentUser,
+  hidden //state=root-reducer,user=user-reducer
 })
 
 
