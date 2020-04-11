@@ -6,6 +6,7 @@ import {Route,Switch,Redirect} from 'react-router-dom';
 import Homepage from './pages/homepage/homepage.component';
 import Shop from './pages/ShopPage/shop.component';
 import Header from './components/Header/header.component';
+import Footer from './components/footer/footer.component';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import Checkout from './pages/checkout/checkout.component';
 
@@ -70,7 +71,7 @@ class App extends Component{
       (<SignInAndSignUp/>)}
      />
     </Switch>
-    
+    <Footer />
       
     </div>)
   }
