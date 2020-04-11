@@ -5,7 +5,11 @@ import logger from 'redux-logger';
 
 import combineReducers from './root-reducer';
 
-const middleware = [logger];
+const middleware = [];
+
+if(process.env.NODE_ENV === 'development'){
+    middleware.push(logger);
+}
 
 
 export  const store = createStore(combineReducers,applyMiddleware(...middleware)); //spreading beacuse we want to scale. applymidlleware can take any no. of middlewares.
