@@ -6,8 +6,9 @@ import {selectCollectionsForPreview} from '../Redux/shop/shop.selectors';
 
 import {createStructuredSelector} from 'reselect';
 
+import './collection-overview.styles.scss'
 
-import './collection-overview.styles.scss';
+
 
 
 
