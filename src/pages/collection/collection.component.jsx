@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './collection.styles.scss';
+
 
 import {connect} from 'react-redux';
 

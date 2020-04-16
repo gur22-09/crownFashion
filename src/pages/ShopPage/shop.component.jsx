@@ -1,5 +1,5 @@
 import React from 'react';
-import '../ShopPage/shop.component.styles.scss';
+
 
 
 

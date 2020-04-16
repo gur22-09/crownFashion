@@ -1,5 +1,5 @@
 import React from 'react';
-import './collection-preview.styles.scss';
+
 
 import { withRouter } from 'react-router-dom';
 
