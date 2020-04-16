@@ -1,7 +1,7 @@
 import React from 'react';
-import './cart-icon.styles.scss';
 
-import {ReactComponent as ShopingIcon} from '../../assets/shoping-bag.svg';
+
+
 
 import {connect} from 'react-redux';
 
@@ -9,11 +9,14 @@ import {toggleCartHidden} from '../../Redux/cart/cart-action';
 
 import {selectCartItemsCount} from '../../Redux/cart/cart.selectors';
 
+
+import {CartIconContainer,ShoppingIconContainer,ItemCountContainer} from './cart-icon.styles';
+
 const CartIcon = ({toggleCartHidden,itemCount})=>(
-    <div className='cart-icon' onClick={toggleCartHidden}>
-        <ShopingIcon className='shopping-icon' />
-        <span className='item-count'>{itemCount}</span>
-    </div>
+    <CartIconContainer  onClick={toggleCartHidden}>
+        <ShoppingIconContainer />
+        <ItemCountContainer>{itemCount}</ItemCountContainer>
+    </CartIconContainer>
 )
 
 const matchDispatchToProps = (dispatch)=>({

@@ -8,15 +8,17 @@ import MenuItem from '../menu-item/menu-item.component';
 import {connect} from 'react-redux';
 import {selectDirectorySections} from '../../Redux/directory/directory.selectors';
 
+import {DirectoryMenuContainer} from './menu-directory.styles';
+
 
 const Directory = ({sections}) =>(
     
   
-  <div className='directory-menu'>
+  <DirectoryMenuContainer>
     {sections.map(({id,...otherItems})=>{
      return  <MenuItem  key={id} {...otherItems} />
     })}
-  </div>
+  </DirectoryMenuContainer>
         
 
 )
