@@ -3,7 +3,7 @@ import React from 'react';
 
 
 
-import CollectionOverview from '../../collection-overview/collection-overview.component';
+import CollectionOverview from '../../components/collection-overview/collection-overview.component';
 import CollectionPage from '../collection/collection.component';
 
 import {Route} from 'react-router-dom';
