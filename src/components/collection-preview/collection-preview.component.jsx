@@ -9,9 +9,9 @@ import {CollectionPreviewContainer,TitleContainer,PreviewContainer} from './coll
 
 
 
-const CollectionPreview =({title,items,history,routeName})=>(
+const CollectionPreview =({title,items,history,routeName,match})=>(
     <CollectionPreviewContainer>
-        <TitleContainer onClick={()=>{history.push(`${routeName}`)}} >
+        <TitleContainer onClick={()=>{history.push(`${match.path}/${routeName}`)}} >
         {title.toUpperCase()}
         </TitleContainer>
         <PreviewContainer>

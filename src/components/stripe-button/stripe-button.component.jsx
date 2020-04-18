@@ -22,7 +22,7 @@ const StripeButton = ({price})=>{
          billingAddress
          shippingAddress
          image='https://sendeyo.com/up/d/f3eb2117da'
-         description={`your total price is ₹yar${price}`}
+         description={`your total price is ₹${price}`}
          amount={priceForStripe}
          panelLabel='Pay now'
          token={onToken}

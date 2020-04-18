@@ -42,14 +42,16 @@ class App extends Component{
         });
       });
       
-    }else{
-      setCurrentUser(userAuth);
     }
+      
+      setCurrentUser(userAuth);
+      
+      
     
       
       
       
-    })
+    });
   }
 
   componentWillUnmount(){
@@ -82,7 +84,8 @@ const matchDispatchToProps = dispatch =>({
 });
 
 const mapStateToProps = createStructuredSelector({
-  currentUser:selectCurrentUser
+  currentUser:selectCurrentUser,
+  
 });
  
 export default connect(mapStateToProps,matchDispatchToProps)(App);

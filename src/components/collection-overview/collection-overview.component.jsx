@@ -14,7 +14,7 @@ import  {CollectionOverviewContainer} from './collection-overview.styles';
 
 const CollectionOverview = ({collections})=>{
     
-    console.log(collections);
+    
     return(
     <CollectionOverviewContainer>
      
