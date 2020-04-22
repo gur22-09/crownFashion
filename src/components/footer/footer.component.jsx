@@ -9,7 +9,7 @@ const Footer =()=>{
     
     const yihuasTwitterId = `https://twitter.com/slingingkeys?lang=en`;
     const githubRef = `https://github.com/gur22-09`;
-    const linkedInRef = `https://www.linkedin.com/in/gurprit-singh-074278167/`;
+    const linkedInRef = `https://www.linkedin.com/in/gurprit-singh/`;
     const date = new Date().getFullYear();
     return (
     <footer>
